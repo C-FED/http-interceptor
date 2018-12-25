@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btnSend$Ajax">jquery-ajax</button>
+    <button id="btnSendAxios">axios</button>
+    <script src="./static/http-interceptor.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script>
+        btnSend$Ajax.addEventListener("click", () => {
+            $.ajax({
+                url: "/sso",
+                headers: {
+                    "a": "b",
+                    "X-Author": "Yf",
+                },
+                success(data) {
+                    console.log(data);
+                }
+            });
+        });
+
+        btnSendAxios.addEventListener("click", () => {
+            axios({
+                url: "/sso",
+                headers: {
+                    "a": "b",
+                    "X-Author": "Yf",
+                },
+            })
+                .then(({ data }) => {
+                    console.log(data);
+                });
+        });
+
+    </script>
+</body>
+
+</html>
