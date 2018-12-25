@@ -1,4 +1,4 @@
-## http-intercepetor
+## http-interceptor
 > XMLHttpRequest 拦截器，基于[Ajax-Hook](https://github.com/wendux/Ajax-hook)
 
 ### Import
