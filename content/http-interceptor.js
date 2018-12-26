@@ -69,8 +69,6 @@
 
 // helpers
 var PREFIX_ISSETTED = "_isHas_";
-// CONFIG
-var LINK_LOGIN = "//xxx.xxx.xxx/login";
 // headers
 var customHeaders = {
     "X-Requested-With": "XMLHttpRequest",
@@ -87,13 +85,11 @@ var verifyResponse = function (xhr) {
         }
         var isKicked = body["Code"] === 401;
         if (isKicked) {
-            if (typeof window.responseCallback === "function") {
-                window.responseCallback(body["Message"]);
+            if (typeof window.httpErrorFallBack === "function") {
+                window.httpErrorFallBack(body["Message"]);
                 return true;
             }
             window.alert(body["Message"]);
-            // redirect to login page
-            window.location.href = LINK_LOGIN;
             // prevent xhr
             return true;
         }
