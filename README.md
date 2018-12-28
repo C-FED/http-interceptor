@@ -5,6 +5,18 @@
 放到所有js之前
 ```html
 <script src="./content/http-interceptor.js"></script>
+<script>
+    /** 拦截后的回调
+     * {string} msg
+     */
+    function httpErrorFallBack(msg) {
+        // 这里写提示登录失效的逻辑
+        alert(msg);
+        // 这里写重定向的逻辑
+        location.href="http://xxx.xxx.xxx/login";
+    }
+</script>
+
 ```
 
 ### Example
