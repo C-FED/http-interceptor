@@ -76,7 +76,14 @@ var customHeaders = {
 // response
 var verifyResponse = function (xhr) {
     if (xhr.status === 200) {
-        var res = xhr.responseText;
+        var res;
+        // 非 text 时，用response
+        if (xhr.responseType || "text" !== "text") {
+            res = xhr.response;
+        } else { // text时，用responseText
+           res = xhr.responseText;
+        }
+        
         var body;
         try {
             body = JSON.parse(res);
