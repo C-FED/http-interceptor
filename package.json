@@ -1,14 +1,10 @@
 {
   "name": "http-intercepetor",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "serve": "node app.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4"
-  }
+  "description": "This is a http interceptor for XMLHttpRequest",
+  "main": "src/index.js",
+  "repository": "https://github.com/C-FED/http-interceptor.git",
+  "author": "yangfan2016 <15234408101@163.com>",
+  "license": "MIT",
+  "private": true
 }
